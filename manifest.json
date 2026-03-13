@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Opportunity Tracker",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://www.linkedin.com/*",
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://www.linkedin.com/*",
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Opportunity Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .profile-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .profile-card h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .profile-form {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .profile-form input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .btn {
+      padding: 8px 15px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background-color: #0052a3;
+    }
+
+    .btn-delete {
+      background-color: #dc3545;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    .btn-delete:hover {
+      background-color: #c82333;
+    }
+
+    .controls {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #eee;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+      color: #444;
+    }
+
+    tbody tr:hover {
+      background-color: #f8f8f8;
+    }
+
+    .highlight-new {
+      background-color: #e6f9e6 !important;
+      border-left: 4px solid #28a745;
+    }
+
+    .highlight-new td:first-child {
+      padding-left: 11px;
+    }
+
+    /* Recommendation Highlight */
+    .highlight-match {
+      background-color: #fff3cd !important;
+      border-left: 4px solid #ffc107;
+    }
+
+    .highlight-match td:first-child {
+      padding-left: 11px;
+    }
+
+    /* Adjust for border */
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 6px;
+      background: #28a745;
+      color: white;
+      border-radius: 3px;
+      font-size: 10px;
+      margin-left: 5px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Opportunity Dashboard</h1>
+
+  <div class="profile-card">
+    <h3>Student Profile</h3>
+    <div class="profile-form">
+      <input type="text" id="profileName" placeholder="Full Name">
+      <input type="email" id="profileEmail" placeholder="Email Address">
+      <input type="text" id="profileSkills" placeholder="Skills (comma separated, e.g. React, Python, UI)">
+      <button class="btn" id="saveProfileBtn">Save Profile</button>
+    </div>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search keywords, title, or notes...">
+    <select id="sortSelect">
+      <option value="date_desc">Newest First</option>
+      <option value="title_asc">Title (A-Z)</option>
+      <option value="deadline_asc">Deadline (Earliest)</option>
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>URL</th>
+        <th>Deadline</th>
+        <th>Notes</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="opportunity-table">
+      <!-- Opportunities will appear here -->
+    </tbody>
+  </table>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

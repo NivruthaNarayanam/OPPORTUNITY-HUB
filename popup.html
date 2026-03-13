@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Opportunity Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      width: 300px;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      margin-bottom: 5px;
+      padding: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    li {
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Add New Opportunity</h2>
+  <input type="text" id="title" placeholder="Title" required>
+  <input type="text" id="url" placeholder="URL (optional)">
+  <textarea id="notes" placeholder="Notes"></textarea>
+  <button id="saveBtn">Save Opportunity</button>
+
+  <h2>Saved Opportunities</h2>
+  <ul id="opportunity-list"></ul>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
